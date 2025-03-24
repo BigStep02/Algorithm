@@ -1,13 +1,22 @@
+import sys
+input = sys.stdin.readline
+
+def binary_search(target):
+    left, right = 0, len(first_nums) - 1
+    while left <= right:
+        mid = (left + right) // 2
+        if first_nums[mid] == target: return True
+        elif first_nums[mid] < target:
+            left = mid + 1
+        else: right = mid - 1
+    
+    return False
+
 N = int(input())
-temp = list(map(int, input().split()))
-num1 = {}
-
-for i, x in enumerate(temp):
-    num1[x] = {i}
-
+first_nums = sorted(list(map(int, input().split())))
 M = int(input())
-num2 = list(map(int, input().split()))
-for i in range(M):
-    if num2[i] in num1:
-        print(1)
+second_nums = list(map(int, input().split()))
+
+for x in second_nums:
+    if binary_search(x): print(1)
     else: print(0)
