@@ -56,7 +56,8 @@ int main(){
 			
 			if(cost < minCost){
 				minCost = cost;
-				answer = string(1, hourStr[0]) + hourStr[1] + ":" + minStr[0] + minStr[1];			}
+				answer = hourStr + ":" + minStr;
+			}
 		}
 	}
 	
